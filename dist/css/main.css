@@ -1,2 +1,2 @@
-h1{color:#b1b}
+.header{height:65vh;background-image:linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.5)),url(/dist/img/header-1.jpeg);background-position:center;background-size:cover;position:relative}
 

@@ -1,0 +1,17 @@
+// * ------------------------------- * \\
+//          HEADER | SETUP
+// * ------------------------------- * \\
+@import './abstracts/variables';
+
+.header {
+    height: 65vh;
+    background-image: linear-gradient(to top, rgba($color-black, .70), rgba($color-black, .50)), url(../img/header-1.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    &__heading {
+        
+    }
+}
+

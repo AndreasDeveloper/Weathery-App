@@ -9,7 +9,8 @@ module.exports = {
         filename: 'js/bundle.js'   // with this filename
     },
     devServer: {
-        contentBase: './dist'   // live server direction
+        contentBase: './dist',   // live server direction
+        open: true
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -22,6 +23,7 @@ module.exports = {
     ],
     module: {
         rules: [
+            // -- BABEL LOADER --
             {
                 test: /\.js$/,  // checks for all possible files that has .js in their name
                 exclude: /node_modules/,    // excluding node_modules folder
@@ -29,6 +31,7 @@ module.exports = {
                     loader: 'babel-loader'
                 }
             },
+            // -- CSS/SCSS LOADER --
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
@@ -36,6 +39,19 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader',
+                ]
+            },
+            // -- URL/IMG LOADER --
+            {
+                test: /\.(png|jpg|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: '/dist/img/'
+                        }
+                    }
                 ]
             }
         ]
