@@ -2,6 +2,11 @@ import '../sass/main.scss';
 
 var test = {
     name: 'Something'
+};  
+console.log(test.name);
+
+const rar = (el) => {
+    return el + el;
 };
 
-console.log(test.name);
+console.log(rar(2));
