@@ -14,21 +14,49 @@
 </head>
 <body>
     <!-- HEADER | STARTS -->
-    <header class="header">
-        <h1 class="header__heading heading-1">Check Weather In Your Area</h1>
-        <form action="#" class="header__search">
-            <input type="text" class="header__search__input" placeholder="Search..">
-            <button class="header__search__button"><i class="icon ion-ios-search header__search__icon"></i></button>
-        </form>
+    <header id="header" class="header change-img-2">
+            <h1 class="header__heading heading-1">Check Weather In Your Area</h1>
+            <form action="#" class="header__search">
+                <input type="text" class="header__search__input" placeholder="Search..">
+                <button class="header__search__button"><i class="icon ion-ios-search header__search__icon"></i></button>
+                <ul class="header__search__suggestions">
+                   <!--
+                    <li>
+                        <a class="header__search__suggestions__link" href="349727">
+                            <h3>Filter for a city</h3>
+                        </a>
+                    </li>
+                    <li>Or a state</li>
+                   -->
+                </ul> 
+            </form>
     </header>
     <!-- HEADER | ENDS -->
 
     <!-- WEATHER DATA PAGE | STARTS-->
     <section class="weather-data-page">
         <div class="forecast-data">
-            <p class="forecast-data__date">01.03.2019.</p>
-            <h2 class="forecast-data__city">New York</h2>
-            <h3 class="forecast-data__temp">18	&#8451;</h3>
+            <!-- INTRODUCTION | LOCATION & DATE AND TIME -->
+            <h2 class="forecast-data__date">Showing Forecast for $DATE$</h2>
+            <h2 class="forecast-data__location">$LOCATION$</h2>
+            <!-- STATUS FOR DAY/NIGHT -->
+            <div class="forecast-data__day-night-wrapper">
+                <h3 class="forecast-data__day-night-heading">Expected Weather For Today</h3>
+                <p class="forecast-data__day">Expected for today: $STATUS FOR DAY$</p>
+                <p class="forecast-data__night">Expected for tonight: $STATUS FOR NIGHT$</p>
+            </div>
+            <!-- TEMPERATURE -->
+            <div class="forecast-data__temp-wrapper">
+                <h3 class="forecast-data__temp-heading">Expected Temperature For Today</h3>
+                <p class="forecast-data__temp-min">Minimum: $MINIMUM TEMP$ $UNIT$</p>
+                <p class="forecast-data__temp-max">Maximum: $MAXIMUM TEMP$ $UNIT$</p>
+            </div>
+            <!-- REPORT FOR CURRENT DATE -->
+            <div class="forecast-data__report-wrapper">
+                <h3 class="forecast-data__report">$DATE$ - Report</h3>
+                <p class="forecast-data__short-text">$TEXT$</p>
+                <p class="forecast-data__severity">$SEVERITY$</p>
+            </div>
         </div>
     </section>
     <!-- WEATHER DATA PAGE | ENDS -->

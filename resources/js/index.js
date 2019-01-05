@@ -2,8 +2,10 @@
 import '../sass/main.scss';
 // * --- JAVASCRIPT MODELS IMPORT --- * \\
 import Search from './models/Search';
+import AutocompleteSearch from './models/AutocompleteSearch';
 import * as searchView from './views/searchView';
 import { elements } from './views/base';
+import ForecastData from './models/ForecastData';
 
 
 // GLOBAL STATE OF THE APP
@@ -19,14 +21,21 @@ const controlSearch = async () => {
     if (query) {
         // Create new search object and add it to the state
         state.search = new Search(query);
-        
+        state.autocomplete = new AutocompleteSearch(query);
+
         // Prepare UI
+        searchView.clearResults();
+        
+        try {
+            // Search cities
+            await state.search.getResults();
+            await state.autocomplete.getAutoSearch();
 
-        // Search cities
-        await state.search.getResults();
-
-        // Render results on UI
-        console.log(state.search.cities);
+            // Render results on UI
+            searchView.renderResults(state.search.cities);
+        } catch (error) {
+            console.log(error);
+        }
     }
 };
 
@@ -35,3 +44,46 @@ elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
 });
+
+// --------------------------------------------
+//  FORECAST DATA | ARCHITECTURE | CONTROLLER
+// --------------------------------------------
+const controlForecastData = async () => {
+    // Get KEY/ID of location from URL
+    const id = window.location.hash.replace('#', ''); 
+
+    if (id) { // If there is an ID in url
+
+        state.cityForecast = new ForecastData(id);
+
+        try {
+            await state.cityForecast.getForecastData();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+['hashchange', 'load'].forEach(event => window.addEventListener(event, controlForecastData));
+
+// ----------------------------------------- \\
+// -- CHANGING BACKGROUND IMAGE ON TIMER --  \\
+// ----------------------------------------- \\
+// - DOM ELEMENTS - \\
+const header = document.querySelector('#header');
+
+setInterval((function(images) {
+        let index = -1, changeImage;
+        const prefixes = ['-o-', '-ms-', '-moz-', '-webkit-'];
+		changeImage = function() {
+			index = (index + 1) % images.length;
+            header.classList.toggle(`${images[index]}`);
+		};
+		changeImage();
+		return changeImage;
+	}([
+		'change-img-1',
+		'change-img-2',
+        'change-img-3',
+        'change-img-4',
+	])), 6000);

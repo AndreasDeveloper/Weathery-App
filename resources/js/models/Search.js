@@ -12,7 +12,7 @@ export default class Search {
         const res = await axios(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${apiKey}&q=${this.query}&details=false&offset=0&alias=Never`); // res stands for results
         try {
             this.cities = res.data;
-            //console.log(this.cities);
+            console.log(res);
         } catch (error) {
             console.log(error);
         }

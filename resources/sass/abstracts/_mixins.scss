@@ -20,6 +20,16 @@
 }
 
 /* ------------------------------------------- */
+/* MIXIN FOR IMAGE BACKGROUND SETUP
+/* ------------------------------------------- */
+@mixin img-setup {
+    height: 75vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+/* ------------------------------------------- */
 /* MEDIA QUERY MANAGER
 /* ------------------------------------------- */
 
