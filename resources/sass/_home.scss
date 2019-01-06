@@ -22,7 +22,6 @@
     background-attachment: fixed;
 }
 
-
 .header {
     //background-image: linear-gradient(to top, rgba($color-black, .70), rgba($color-black, .50)), url(../img/header-1.jpeg);
     @include img-setup;
@@ -88,17 +87,20 @@
             background: $color-white;
             list-style: none;
             border-bottom: 1px solid #D8D8D8;
-            box-shadow: 0 0 10px rgba($color-black, .10);
+            box-shadow: 0 0 1rem rgba($color-black, .10);
             margin: 0;
             padding: 1rem;
-            transition: background 0.2s;
+            transition: all 0.2s;
             display: flex;
             justify-content: space-between;
             text-transform: capitalize;
+            &:hover {
+                background: $color-grey-light-5;
+            }
            }
            &__link {
                text-decoration: none;
-               color: $color-black;
+               color: $color-grey-dark-3;
            }
         }
         

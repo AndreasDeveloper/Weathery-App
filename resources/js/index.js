@@ -2,12 +2,10 @@
 import '../sass/main.scss';
 // * --- JAVASCRIPT MODELS IMPORT --- * \\
 import Search from './models/Search';
-import AutocompleteSearch from './models/AutocompleteSearch';
 import * as searchView from './views/searchView';
 import * as forecastView from './views/forecastDataView';
 import { elements } from './views/base';
 import ForecastData from './models/ForecastData';
-
 
 // GLOBAL STATE OF THE APP
 const state = {}; // Global state object
@@ -22,7 +20,6 @@ const controlSearch = async () => {
     if (query) {
         // Create new search object and add it to the state
         state.search = new Search(query);
-        state.autocomplete = new AutocompleteSearch(query);
 
         // Prepare UI
         searchView.clearResults();
@@ -30,7 +27,6 @@ const controlSearch = async () => {
         try {
             // Search cities
             await state.search.getResults();
-            // state.autocomplete.getAutoSearch();
 
             // Render results on UI
             searchView.renderResults(state.search.cities);
@@ -71,7 +67,6 @@ const controlForecastData = async () => {
         }
     }
 }
-
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlForecastData));
 
 // ----------------------------------------- \\

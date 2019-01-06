@@ -13,17 +13,6 @@ export default class ForecastData {
             console.log(res);
             this.data = res.data.DailyForecasts;
             this.headData = res.data.Headline;
-            // Accesing Array
-            /*
-            this.data.forEach(el => {
-                el.Date; // Forecast showing date
-                el.Day.IconPhrase; // Status for Day: Rain, Clouds, Snow..
-                el.Night.IconPhrase; // Status for Night: Rain, Clouds, Snow..
-                el.Temperature.Minimum.Unit; // C/F
-                el.Temperature.Minimum.Value; // 27, 16, -5, 0..
-                el.Temperature.Maximum.Unit;
-                el.Temperature.Maximum.Value;
-            }) */
             this.date = this.data[0].Date;
             this.dayIp = this.data[0].Day.IconPhrase;
             this.nightIp = this.data[0].Night.IconPhrase;
