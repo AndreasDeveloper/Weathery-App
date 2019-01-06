@@ -19,7 +19,7 @@ export const renderCities = city => {
     const markup = `
     <li>
         <a class="header__search__suggestions__link" href="#${city.Key}">
-            <h3>${city.LocalizedName}</h3>
+            <h3>${city.LocalizedName}, ${city.Country.ID}</h3>
         </a>
     </li>
     `;

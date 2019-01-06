@@ -15,6 +15,12 @@
 .change-img-4 {
     background-image: linear-gradient(to top, rgba($color-black, .70), rgba($color-black, .50)), url(../img/header-4.jpeg);
 }
+.change-img-1,
+.change-img-2,
+.change-img-3,
+.change-img-4 {
+    background-attachment: fixed;
+}
 
 
 .header {
@@ -124,13 +130,13 @@
 
 // -- MAIN PAGE SETUP --
 .weather-data-page {
-    height: 80vh;
+    height: 100vh;
     position: relative;
     background-color: $color-grey-light-1;
 }
 
 .forecast-data {
-    // Current Date
+    // Introduction 
     &__date {
         color: $color-primary;
         font-size: 3rem;
@@ -144,65 +150,102 @@
         text-align: center;
         padding-top: 1.2rem;
     }
-    // -- Day-Night Status Wrapper --
-    &__day-night-wrapper {
+    // Current Weather Status
+    &__weather {
+        text-align: center;
+        padding-top: 2.6rem;
+        font-size: 1.8rem;
+        color: $color-primary;
+    }
+    // Wrappers - Same Rules
+    &__day-night-wrapper,
+    &__temp-wrapper,
+    &__report-wrapper {
+        box-shadow: 0 1rem 1rem .1rem rgba($color-black, .10);
         display: block;
         width: 40rem;
         height: 30rem;
         position: absolute;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    // Headings - Same Rules
+    &__day-night-heading,
+    &__temp-heading,
+    &__report {
+        color: $color-primary;
+    }
+    // -- Day-Night Status Wrapper --
+    &__day-night-wrapper {
         top: 65%;
         left: 20%;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 0 1rem .1rem rgba($color-black, .10);
+    }
+    // Day-Night Status heading
+    &__day-night-heading {
+        font-size: 2.4rem;
     }
     // Status for day
+    &__day,
+    &__night {
+        color: $color-primary;
+    }
     &__day {
-
+        font-size: 1.6rem;
+        @include center-vh;
+        top: 40%;
     }
     // Status for night
     &__night {
-
+        font-size: 1.6rem;
+        @include center-vh;
+        top: 60%;
     }
     // -- Temperature Wrapper --
     &__temp-wrapper {
-        display: block;
-        width: 40rem;
-        height: 30rem;
-        position: absolute;
         top: 65%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 0 1rem .1rem rgba($color-black, .10);
     }
-    // Minimum Temperature
-    &__temp-min {
-
+    // Temperature Heading
+    &__temp-heading {
+        font-size: 2.2rem;
     }
     // Maximum Temperature
     &__temp-max {
-
+        font-size: 2rem;
+        @include center-vh;
+        top: 40%;
+    }
+    &__temp-max-icon {
+        color: $color-primary;
+    }
+    // Minimum Temperature
+    &__temp-min {
+        font-size: 2rem;
+        @include center-vh;
+        top: 60%;
+    }
+    &__temp-min-icon {
+        color: $color-primary;
     }
     // -- Report Wrapper --
     &__report-wrapper {
-        display: block;
-        width: 40rem;
-        height: 30rem;
-        position: absolute;
         top: 65%;
         left: 80%;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 0 1rem .1rem rgba($color-black, .10);
     }
     // Report Headline
     &__report {
-
+        font-size: 2rem;
     }
     // Short Status Text
     &__short-text {
-
+        font-size: 1.4rem;
+        @include center-vh;
     }
     // Severity of the weather
     &__severity {
-
+        @include center-vh;
+        top: 80%;
+        color: $color-black;
+        font-size: 1.2rem;
     }
 }

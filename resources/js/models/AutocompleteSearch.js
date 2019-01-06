@@ -14,7 +14,7 @@ export default class AutocompleteSearch {
         try {
             this.citiesAutocomplete = res.data;
             citiesA.push(...this.citiesAutocomplete);
-            console.log(citiesA);
+            //console.log(citiesA);
         } catch (error) {
             console.log(error);
         }

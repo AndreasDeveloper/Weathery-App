@@ -4,6 +4,7 @@ import '../sass/main.scss';
 import Search from './models/Search';
 import AutocompleteSearch from './models/AutocompleteSearch';
 import * as searchView from './views/searchView';
+import * as forecastView from './views/forecastDataView';
 import { elements } from './views/base';
 import ForecastData from './models/ForecastData';
 
@@ -25,11 +26,11 @@ const controlSearch = async () => {
 
         // Prepare UI
         searchView.clearResults();
-        
+
         try {
             // Search cities
             await state.search.getResults();
-            await state.autocomplete.getAutoSearch();
+            // state.autocomplete.getAutoSearch();
 
             // Render results on UI
             searchView.renderResults(state.search.cities);
@@ -53,11 +54,18 @@ const controlForecastData = async () => {
     const id = window.location.hash.replace('#', ''); 
 
     if (id) { // If there is an ID in url
+        // Prepare UI for changes
+        forecastView.clearForecastData();
 
+        // Creates new city forecast data object
         state.cityForecast = new ForecastData(id);
 
         try {
+            // Get forecast data
             await state.cityForecast.getForecastData();
+
+            // Render forecast data
+            forecastView.renderForecastData(state.cityForecast);
         } catch (error) {
             console.log(error);
         }
