@@ -14,12 +14,21 @@ export const clearResults = () => {
     elements.searchResultList.innerHTML = '';
 };
 
+// -- PRIVATE FUNCTION | Checking if there is a postal code
+const postalCodeShow = (postalCode) => {
+    if (!postalCode || 0 === postalCode.length) {
+        return 'empty';
+    } else {
+        return postalCode;
+    }
+}
+
 // -- EXPORTING FUNCTION | Rendering UI - Cities
 export const renderCities = city => {
     const markup = `
     <li>
         <a class="header__search__suggestions__link" href="#${city.Key}">
-            <h3>${city.LocalizedName}, ${city.Country.ID}</h3>
+            <h3>${city.LocalizedName}, ${city.Country.ID}, ${postalCodeShow(city.PrimaryPostalCode)}, <span class="header__search__suggestions__rank">Rank: ${city.Rank}</span></h3>
         </a>
     </li>
     `;

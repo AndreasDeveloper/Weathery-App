@@ -41,6 +41,10 @@ elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
 });
+// -- EVENT LISTENER | DELETING SEARCH RESULT LIST -- \\
+elements.searchResultList.addEventListener('click', () => {
+    searchView.clearResults();
+});
 
 // --------------------------------------------
 //  FORECAST DATA | ARCHITECTURE | CONTROLLER
@@ -89,4 +93,5 @@ setInterval((function(images) {
 		'change-img-2',
         'change-img-3',
         'change-img-4',
+        'change-img-5',
 	])), 6000);

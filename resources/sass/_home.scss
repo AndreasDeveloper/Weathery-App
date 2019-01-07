@@ -15,10 +15,14 @@
 .change-img-4 {
     background-image: linear-gradient(to top, rgba($color-black, .70), rgba($color-black, .50)), url(../img/header-4.jpeg);
 }
+.change-img-5 {
+    background-image: linear-gradient(to top, rgba($color-black, .70), rgba($color-black, .50)), url(../img/header-5.jpeg);
+}
 .change-img-1,
 .change-img-2,
 .change-img-3,
-.change-img-4 {
+.change-img-4,
+.change-img-5 {
     background-attachment: fixed;
 }
 
@@ -83,6 +87,7 @@
         &__suggestions {
             position: absolute;
             top: 100%;
+            width: 85%;
            & li {
             background: $color-white;
             list-style: none;
@@ -101,6 +106,10 @@
            &__link {
                text-decoration: none;
                color: $color-grey-dark-3;
+           }
+           &__rank {
+               display: flex;
+               justify-content: end;
            }
         }
         

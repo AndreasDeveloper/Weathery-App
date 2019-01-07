@@ -15,7 +15,7 @@ const capitalizeFirstLetter = (string) => {
 export const renderForecastData = (city) => {
     const markup = `
     <h2 class="forecast-data__date">Showing Forecast for : ${city.date}</h2>
-    <h2 class="forecast-data__location">- ${city.LocalizedName} -</h2>
+    <h2 class="forecast-data__location">- ${elements.searchInput.value} -</h2>
     <h2 class="forecast-data__weather">Current Weather Status: ${capitalizeFirstLetter(city.category)}</h2>
     <div class="forecast-data__day-night-wrapper">
         <h3 class="forecast-data__day-night-heading">Expected Weather For Today</h3>

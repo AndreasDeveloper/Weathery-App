@@ -13,6 +13,7 @@ export default class ForecastData {
             console.log(res);
             this.data = res.data.DailyForecasts;
             this.headData = res.data.Headline;
+            
             this.date = this.data[0].Date;
             this.dayIp = this.data[0].Day.IconPhrase;
             this.nightIp = this.data[0].Night.IconPhrase;
