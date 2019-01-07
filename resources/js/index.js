@@ -4,7 +4,7 @@ import '../sass/main.scss';
 import Search from './models/Search';
 import * as searchView from './views/searchView';
 import * as forecastView from './views/forecastDataView';
-import { elements } from './views/base';
+import { elements, renderLoader, clearLoader } from './views/base';
 import ForecastData from './models/ForecastData';
 
 // GLOBAL STATE OF THE APP
@@ -23,6 +23,7 @@ const controlSearch = async () => {
 
         // Prepare UI
         searchView.clearResults();
+        renderLoader(elements.forecastData);
 
         try {
             // Search cities
@@ -66,6 +67,7 @@ const controlForecastData = async () => {
 
             // Render forecast data
             forecastView.renderForecastData(state.cityForecast);
+            clearLoader();
         } catch (error) {
             console.log(error);
         }
@@ -82,7 +84,7 @@ const header = document.querySelector('#header');
 setInterval((function(images) {
         let index = -1, changeImage;
         const prefixes = ['-o-', '-ms-', '-moz-', '-webkit-'];
-		changeImage = function() {
+		changeImage = () => {
 			index = (index + 1) % images.length;
             header.classList.toggle(`${images[index]}`);
 		};

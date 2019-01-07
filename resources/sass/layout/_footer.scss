@@ -1,0 +1,160 @@
+// * ------------------------------- * \\
+//          FOOTER | SETUP
+// * ------------------------------- * \\
+
+.footer {
+    // CSS Grid
+    display: grid;
+    grid-template-rows: repeat(12, 3vh);
+    grid-template-columns: repeat(autofit, minmax(5rem, 15rem));
+    background-color: $color-black;
+    color: $color-white;
+}
+
+// Company
+.footer-container-1 {
+    // CSS Grid
+    grid-row: 2 / 10;
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-rows: repeat(6, 5vh);
+    grid-template-columns: repeat(4, 2vw);
+    justify-self: center;
+
+    &__section-1,
+    &__list {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+
+    &__section-1 {
+        // CSS Grid
+        grid-row: 2 / 3;
+        grid-column: 3 / 5;
+        color: $color-grey-dark-6;
+    }
+
+    &__list {
+        list-style: none;
+        // CSS Grid
+        grid-row: 3 / -1;
+        grid-column: 3 / 8;
+
+        &__item {
+            padding: 0.5rem 0 0.5rem 0;
+            transition: all .2s;
+            cursor: pointer;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+// Social Media
+.footer-container-3 {
+    // CSS Grid
+    grid-row: 2 / 10;
+    grid-column: 9 / 10;
+    display: grid;
+    grid-template-rows: repeat(6, 5vh);
+    grid-template-columns: repeat(6, 1fr);
+
+    &__section-3 {
+        // CSS Grid
+        grid-row: 2 / 3;
+        grid-column: 1 / 7;
+        font-size: 1.2rem;
+        color: $color-grey-dark-6;
+    }
+
+    &__icon {
+        // CSS Grid - Overall Container
+        grid-row: 3 / 4;
+        cursor: pointer;
+        text-decoration: none;
+        color: $color-white;
+
+        &--1,
+        &--2,
+        &--3 {
+            font-size: 3rem;
+        }
+
+        // CSS Grid
+        &--1 {grid-column: 1 / 2; padding: 0 1rem 1rem 0;}
+        &--2 {grid-column: 2 / 3; padding: 0 1rem 1rem 0;}
+        &--3 {grid-column: 3 / 4; padding: 0 1rem 1rem 0;}
+
+        &--1:hover {
+            color: #3C5A99;
+        }
+        &--2:hover {
+            color: #38A1F3;
+        }
+        &--3:hover {
+            color: #231F20;
+        }
+    }
+}
+
+// Legal
+.footer-container-4 {
+    // CSS Grid
+    grid-row: 11 / 12;
+    grid-column: 2 / 4;
+    justify-self: center;
+
+    &__list {
+        list-style: none;
+        display: block;
+
+        &__item {
+            display: inline-block;
+            font-weight: 300;
+            padding: 1.2rem;
+            transition: all .2s;
+            cursor: pointer;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+// Copyright text
+.footer-container-5 {
+    // CSS Grid
+    grid-row: 11 / 12;
+    grid-column: 8 / 10;
+    justify-self: center;
+    margin-right: 8rem;
+
+    &__text,
+    &__text-2 {
+        font-size: 1.2rem;
+        font-weight: 300;
+        display: flex;
+        justify-content: flex-end;
+    }
+    // Link to AccuWeather
+    &__link:link,
+    &__link:visited {
+        text-decoration-color: $color-white;
+        text-decoration-line: underline;
+    }
+}
+
+// Default
+.footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*
+.link:link,
+.link:visited {
+  color: #968B87; }
+*/

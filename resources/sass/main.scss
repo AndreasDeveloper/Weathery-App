@@ -2,10 +2,13 @@
 
 // * --- IMPORTING OTHER SASS FILES --- * \\
 // - ABSTRACTS - \\
-@import './abstracts/variables';
-@import './abstracts/mixins';
+@import './abstracts/variables.scss';
+@import './abstracts/mixins.scss';
 // - BASE - \\
-@import './base/base';
+@import './base/base.scss';
 @import './base/typography.scss';
+// - COMPONENTS - \\
+@import './components/loader.scss';
 // - LAYOUT - \\
-@import './home.scss';
+@import './layout/footer.scss';
+@import './layout/home.scss';
