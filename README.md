@@ -16,4 +16,5 @@
 - MVC Design Pattern
 - BEM Methodology
 
-- Note: Instead of usual Promises (.then() and .catch()), project relies on modern async / await syntax, used with try and catch.
+
+-- Note: Instead of usual Promises (.then() and .catch()), project relies on modern async / await syntax, used with try and catch.
