@@ -88,6 +88,9 @@
             position: absolute;
             top: 100%;
             width: 75%;
+            list-style: none;
+            max-height: 30rem; // Height of the scroller
+            overflow: auto; // Makes ul to have a scroller
            & li {
             background: $color-white;
             list-style: none;
