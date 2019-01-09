@@ -23,7 +23,6 @@ const controlSearch = async () => {
 
         // Prepare UI
         searchView.clearResults();
-        renderLoader(elements.forecastData);
 
         try {
             // Search cities
@@ -57,6 +56,7 @@ const controlForecastData = async () => {
     if (id) { // If there is an ID in url
         // Prepare UI for changes
         forecastView.clearForecastData();
+        renderLoader(elements.forecastData);
 
         // Creates new city forecast data object
         state.cityForecast = new ForecastData(id);

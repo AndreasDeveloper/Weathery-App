@@ -8,7 +8,30 @@ export const clearForecastData = () => {
 
 // -- PRIVATE FUNCTION | - Capitalizing first letter 
 const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+    if (!string || 0 === string.length) {
+        return 'N/A';
+    } else {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+};
+
+// -- PRIVATE FUNCTION | - Displaying icon related to current weather
+const displayIcon = (currCategory) => {
+    if (currCategory === 'Rain' || currCategory === 'rain') {
+        return `<i class="icon ion-ios-rainy"></i>`;
+    } else if (currCategory === 'Wind' || currCategory === 'wind') {
+        return `<i class="icon ion-ios-leaf"></i>`;
+    } else if (currCategory === 'Snow' || currCategory === 'snow') {
+        return `<i class="icon ion-ios-snow"></i>`;
+    } else if (currCategory === 'Heat' || currCategory === 'heat') {
+        return `<i class="icon ion-ios-sunny"></i>`;
+    } else if (currCategory === 'Thunderstorm' || currCategory === 'thunderstorm') {
+        return `<i class="icon ion-ios-thunderstorm"></i>`;
+    } else if (currCategory === 'Cold' || currCategory === 'cold') {
+        return `<i class="icon ion-ios-thermometer"></i>`;
+    } else if (currCategory == undefined || currCategory === '' || currCategory == null) { // If current Category in JSON data is empty string/null/undefined return X
+        return `<i class="icon ion-ios-close"></i>`;
+    }
 };
 
 // -- EXPORTING FUNCTION | - Rendering Forecast Data on HTML
@@ -16,6 +39,7 @@ export const renderForecastData = (city) => {
     const markup = `
     <h2 class="forecast-data__date">Showing Forecast for : ${city.date}</h2>
     <h2 class="forecast-data__location">- ${elements.searchInput.value} -</h2>
+    <h2 class="forecast-data__weather-icon">${displayIcon(city.category)}</h2>
     <h2 class="forecast-data__weather">Current Weather Status: ${capitalizeFirstLetter(city.category)}</h2>
     <div class="forecast-data__day-night-wrapper">
         <h3 class="forecast-data__day-night-heading">Expected Weather For Today</h3>

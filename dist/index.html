@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <!-- META SETUP -->
@@ -13,17 +13,28 @@
     <title>Weathery</title>
 <link href="css/main.css" rel="stylesheet"></head>
 <body>
+
+    <!-- LOADER / SPINNER | STARTS -->
+    <!--
+    <div class="loader">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+    -->
+    <!-- LOADER / SPINNER | ENDS -->
+
     <!-- HEADER | STARTS -->
     <header id="header" class="header change-img-2">
             <h1 class="header__heading heading-1">Check Weather In Your Area</h1>
             <form action="#" class="header__search">
-                <input type="text" class="header__search__input" placeholder="Search..">
+                <input type="text" class="header__search__input" placeholder="City, Region, Postal Code..">
                 <button class="header__search__button"><i class="icon ion-ios-search header__search__icon"></i></button>
                 <ul class="header__search__suggestions">
                    <!--
                     <li>
-                        <a class="header__search__suggestions__link" href="349727">
-                            <h3>Filter for a city</h3>
+                        <a class="header__search__suggestions__link" href="#KEY">
+                            <h3>New York, US, 10007, <span class="header__search__suggestions__rank">15<span></h3>
                         </a>
                     </li>
                     <li>Or a state</li>
@@ -63,6 +74,40 @@
         </div>
     </section>
     <!-- WEATHER DATA PAGE | ENDS -->
+
+    <!-- FOOTER | STARTS -->
+    <footer class="footer">
+         <!-- SECTION 1 -->
+         <div class="footer-container-1">
+            <h3 class="heading-3 footer-container-1__section-1">Weathery</h3>
+            <ul class="footer-container-1__list">
+                <li class="footer-container-1__list__item">About</li>
+                <li class="footer-container-1__list__item">Why Weathery</li>
+            </ul>
+        </div>
+        <!-- SECTION 3 -->
+        <div class="footer-container-3">
+            <h3 class="heading-3 footer-container-3__section-3">Social Media</h3>
+            <a href="https://www.facebook.com" target="_blank" class="footer-container-3__icon footer-container-3__icon--1"><i class="icon ion-logo-facebook"></i></a>
+            <a href="https://www.twitter.com" target="_blank" class="footer-container-3__icon footer-container-3__icon--2"><i class="icon ion-logo-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank" class="footer-container-3__icon footer-container-3__icon--3"><i class="icon ion-logo-instagram"></i></a>
+        </div>
+        <!-- SECTION 4 -->
+        <div class="footer-container-4">
+            <ul class="footer-container-4__list">
+                <li class="footer-container-4__list__item">Legal</li> 
+                <li class="footer-container-4__list__item">Privacy Policy</li> 
+                <li class="footer-container-4__list__item">Cookies</li> 
+                <li class="footer-container-4__list__item">Ads</li> 
+            </ul>
+        </div>
+        <!-- SECTION 5 -->
+        <div class="footer-container-5">
+            <h4 class="heading-4 footer-container-5__text-2">Powered By <a class="footer-container-5__link" href="https://www.accuweather.com/" target="_blank">AccuWeather</a>&copy;</h4>
+            <h4 class="heading-4 footer-container-5__text">Weathery built by AndreasDEV. &copy;2018 Weathery all rights reserved.</h4>
+        </div>
+    </footer>
+    <!-- FOOTER ENDS -->
 
 <script type="text/javascript" src="js/bundle.js"></script></body>
 </html>

@@ -90,6 +90,7 @@
             width: 75%;
             list-style: none;
             max-height: 30rem; // Height of the scroller
+            -ms-overflow: auto;
             overflow: auto; // Makes ul to have a scroller
            & li {
             background: $color-white;
@@ -99,6 +100,9 @@
             margin: 0;
             padding: 1rem;
             transition: all 0.2s;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox; 
             display: flex;
             justify-content: space-between;
             text-transform: capitalize;
@@ -111,9 +115,16 @@
                color: $color-grey-dark-3;
            }
            &__rank {
-               display: flex;
-               justify-content: end;
-           }
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox; 
+                display: flex;
+                justify-content: end;
+           } 
+            // - Flexbox For Mozilla
+            @supports (-moz-appearance:none) {
+                .header__search__suggestions__rank { justify-content: start; } 
+            }
         }
         
         // -- SEARCH BUTTON -- \\
@@ -167,8 +178,15 @@
     // Current Weather Status
     &__weather {
         text-align: center;
-        padding-top: 2.6rem;
+        padding-top: 7rem;
         font-size: 1.8rem;
+        color: $color-primary;
+    }
+    &__weather-icon {
+        @include center-vh;
+        top: 20%;
+        padding-top: 2rem;
+        font-size: 5rem;
         color: $color-primary;
     }
     // Wrappers - Same Rules

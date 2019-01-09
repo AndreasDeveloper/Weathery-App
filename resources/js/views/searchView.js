@@ -17,7 +17,7 @@ export const clearResults = () => {
 // -- PRIVATE FUNCTION | Checking if there is a postal code
 const postalCodeShow = (postalCode) => {
     if (!postalCode || 0 === postalCode.length) {
-        return 'empty';
+        return 'N/A';
     } else {
         return postalCode;
     }
