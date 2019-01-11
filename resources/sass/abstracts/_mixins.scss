@@ -23,10 +23,9 @@
 /* MIXIN FOR IMAGE BACKGROUND SETUP
 /* ------------------------------------------- */
 @mixin img-setup {
-    height: 80vh;
-    /*background-position: center;
+    background-position: center;
     background-size: cover;
-    position: relative;*/
+    //background-attachment: fixed;
 }
 
 /* ------------------------------------------- */

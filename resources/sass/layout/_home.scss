@@ -3,8 +3,7 @@
 // * ------------------------------- * \\
 
 .header {
-    //background-image: linear-gradient(to top, rgba($color-black, .70), rgba($color-black, .50)), url(../img/header-1.jpeg);
-    @include img-setup;
+    height: 95vh;
 
     &__heading {
         @include center-vh;
