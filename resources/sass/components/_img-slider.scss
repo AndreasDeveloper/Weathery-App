@@ -1,0 +1,46 @@
+// * ------------------------------- * \\
+//        IMAGE SLIDER | SETUP
+// * ------------------------------- * \\
+
+.slider {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slider > * {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    animation: slide 32s infinite;
+    overflow: hidden;
+}
+
+.slide:nth-child(4) {
+    left: 0%;
+    animation-delay: -2s;
+    background-image: linear-gradient(to top, rgba($color-black, .70), rgba($color-black, .50)), url(../img/header-1.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-child(3) {
+    animation-delay: 6s;
+    background-image: linear-gradient(to top, rgba($color-black, .70), rgba($color-black, .50)), url(../img/header-2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-child(2) {
+    animation-delay: 14s;
+    background-image: linear-gradient(to top, rgba($color-black, .70), rgba($color-black, .50)), url(../img/header-5.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+.slide:nth-child(1) {
+    animation-delay: 22s;
+    background-image: linear-gradient(to top, rgba($color-black, .70), rgba($color-black, .50)), url(../img/header-4.jpeg);
+    background-size: cover;
+    background-position: center;
+}

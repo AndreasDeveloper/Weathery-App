@@ -79,16 +79,16 @@ const controlForecastData = async () => {
 // -- CHANGING BACKGROUND IMAGE ON TIMER --  \\
 // ----------------------------------------- \\
 // - DOM ELEMENTS - \\
+/*
 const header = document.querySelector('#header');
 
 setInterval((function(images) {
         let index = -1, changeImage;
-        const prefixes = ['-o-', '-ms-', '-moz-', '-webkit-'];
 		changeImage = () => {
 			index = (index + 1) % images.length;
-            header.classList.toggle(`${images[index]}`);
-		};
-		changeImage();
+            header.classList.add(`${images[index]}`);
+        };
+        changeImage();
 		return changeImage;
 	}([
 		'change-img-1',
@@ -96,4 +96,5 @@ setInterval((function(images) {
         'change-img-3',
         'change-img-4',
         'change-img-5',
-	])), 6000);
+    ])), 6000);
+*/
