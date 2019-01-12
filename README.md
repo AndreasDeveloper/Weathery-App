@@ -4,7 +4,7 @@
 
 <b>SUMMARY</b>
 
--Weathery is web application that provides weather data of a certain location to its users. AccuWeather API provides weather data of cities, regions, countries to Weathery app. API covers whole world, which means every single location is available, with precise weather data.
+<b>-</b>Weathery is web application that provides weather data of a certain location to its users. AccuWeather API provides weather data of cities, regions, countries to Weathery app. API covers whole world, which means every single location is available, with precise weather data.
 
 <b>FOCUS</b>
 
