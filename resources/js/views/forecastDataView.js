@@ -15,9 +15,15 @@ const capitalizeFirstLetter = (string) => {
     }
 };
 
+// -- PRIVATE FUNCTION | - Formating date and time
+const formatTime = (currTime) => {
+    return currTime.slice(0, 10).replace(/-/g, '.')
+    .replace(/$/, '.'); // Adds dot at the end of digit
+};
+
 // -- PRIVATE FUNCTION | - Displaying icon related to current weather
 const displayIcon = (currCategory) => {
-    if (currCategory === 'Rain' || currCategory === 'rain') {
+    if (currCategory === 'Rain' || currCategory === 'rain' || currCategory === 'snow/rain') {
         return `<i class="icon ion-ios-rainy"></i>`;
     } else if (currCategory === 'Wind' || currCategory === 'wind') {
         return `<i class="icon ion-ios-leaf"></i>`;
@@ -37,10 +43,11 @@ const displayIcon = (currCategory) => {
 // -- EXPORTING FUNCTION | - Rendering Forecast Data on HTML
 export const renderForecastData = (city) => {
     const markup = `
-    <h2 class="forecast-data__date">Showing Forecast for : ${city.date}</h2>
+    <h2 class="forecast-data__date">Showing Forecast For : ${formatTime(city.date)}</h2>
     <h2 class="forecast-data__location">- ${elements.searchInput.value} -</h2>
     <h2 class="forecast-data__weather-icon">${displayIcon(city.category)}</h2>
     <h2 class="forecast-data__weather">Current Weather Status: ${capitalizeFirstLetter(city.category)}</h2>
+    <h2 class="forecast-data__current-temp">Current Temperature: ${city.currTempV} ${city.currTempU}&#176;</h2>
     <div class="forecast-data__day-night-wrapper">
         <h3 class="forecast-data__day-night-heading">Expected Weather For Today</h3>
         <p class="forecast-data__day">Expected for Today: ${city.dayIp}</p>
@@ -52,7 +59,7 @@ export const renderForecastData = (city) => {
         <p class="forecast-data__temp-min"><i class="icon ion-md-arrow-dropdown forecast-data__temp-min-icon">Minimum: ${city.tempMinV} ${city.tempMinU}&#176;</i></p>
     </div>
     <div class="forecast-data__report-wrapper">
-        <h3 class="forecast-data__report">${city.date} - Report</h3>
+        <h3 class="forecast-data__report">${formatTime(city.date)} - Report</h3>
         <p class="forecast-data__short-text">Report Text: ${city.shortText}.</p>
         <p class="forecast-data__severity">Severity: ${city.severity}</p>
     </div>

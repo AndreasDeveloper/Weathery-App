@@ -22,7 +22,6 @@ const postalCodeShow = (postalCode) => {
         return postalCode;
     }
 }
-
 // -- EXPORTING FUNCTION | Rendering UI - Cities
 export const renderCities = city => {
     const markup = `

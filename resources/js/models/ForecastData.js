@@ -23,7 +23,12 @@ export default class ForecastData {
             this.category = this.headData.Category; // Rain, Snow, Clouds..
             this.severity = this.headData.Severity; // Severity of the category (integers)
             this.shortText = this.headData.Text; // Short text describing the weather
-            //console.log(this.data);
+            
+            // - Current Conditions - \\
+            const res2 = await axios(`http://dataservice.accuweather.com/currentconditions/v1/${this.id}?apikey=${apiKey}`);
+            this.data2 = res2.data[0];
+            this.currTempU = this.data2.Temperature.Metric.Unit;
+            this.currTempV = this.data2.Temperature.Metric.Value;
         } catch (error) {
             console.log(error);
         }

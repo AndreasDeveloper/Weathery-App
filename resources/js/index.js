@@ -74,27 +74,3 @@ const controlForecastData = async () => {
     }
 }
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlForecastData));
-
-// ----------------------------------------- \\
-// -- CHANGING BACKGROUND IMAGE ON TIMER --  \\
-// ----------------------------------------- \\
-// - DOM ELEMENTS - \\
-/*
-const header = document.querySelector('#header');
-
-setInterval((function(images) {
-        let index = -1, changeImage;
-		changeImage = () => {
-			index = (index + 1) % images.length;
-            header.classList.add(`${images[index]}`);
-        };
-        changeImage();
-		return changeImage;
-	}([
-		'change-img-1',
-		'change-img-2',
-        'change-img-3',
-        'change-img-4',
-        'change-img-5',
-    ])), 6000);
-*/
