@@ -8,7 +8,7 @@
 
 <b>FOCUS</b>
 
-- Focus was on API manipulation and consumption of its data. In Weathery app, two endpoints were used (one for search functionality, other for displaying Forecast data of certain location). MVC pattern was used, which makes app much more flexible, code readable, file organisation outstanding. 
+- Focus was on API manipulation and consumption of its data. In Weathery app, two endpoints were used (one for search functionality, other for displaying Forecast data of certain location). MVC pattern was used, which makes app much more flexible, code readable and files are much more organised.  
 
 <b>TOOLS USED</b>
 
