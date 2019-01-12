@@ -5,138 +5,185 @@
 // -- MAIN PAGE SETUP --
 .weather-data-page {
     height: 100vh;
-    position: relative;
     background-color: $color-grey-light-1;
+    position: relative;
 }
 
 .forecast-data {
-    // Introduction 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-gap: 1rem;
+    margin: 5rem;
+
+    // Date
     &__date {
+        top: 8%;
+        font-size: 2.8rem;
+        font-weight: 400;
         color: $color-primary;
-        font-size: 3rem;
-        font-weight: 300;
-        text-align: center;
-        padding-top: 3rem;
+        // CSS Grid
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+        @include jacont;
     }
-    // Inserted Location
+    // Location
     &__location {
-        color: $color-primary;
         font-size: 3rem;
-        font-weight: 500;
-        text-align: center;
-        padding-top: 1.2rem;
-    }
-    // Current Weather Status
-    &__weather {
-        text-align: center;
-        padding-top: 7rem;
-        font-size: 1.8rem;
-        font-weight: 500;
+        font-weight: 400;
         color: $color-primary;
+        // CSS Grid
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+        @include jacont;
     }
-    &__weather-icon {
-        @include center-vh;
-        top: 20%;
-        padding-top: 2rem;
+}
+
+// * ---------------- * \\
+//  - CURRENT STATUS -
+// * ---------------- * \\
+.current-wrapper {
+    text-align: center;
+    background-color: $color-white;
+    box-shadow: 0 1rem 1rem .1rem rgba($color-black, .10);
+    width: 80%;
+    height: 110%;
+    padding-top: 1rem;
+    position: relative;
+    transition: all .2s;
+    // CSS Grid
+    grid-column: 2 / 3;
+    grid-row: 10 / 16;
+    @include jacont;
+    // Hover Transition
+    &:hover {
+        transform: scale(1.1);
+    }
+    
+    &__weather-icon { // Current Weather Icon
         font-size: 5rem;
         color: $color-primary;
+        // CSS Grid
+        grid-column: 2 / 3;
+        grid-row: 10 / 11;
+        @include jacont;
     }
-    &__current-temp {
-        @include center-vh;
-        top: 35%;
-        font-weight: 400;
+    &__weather { // Current Weather Status
         font-size: 1.8rem;
+        font-weight: 500;
+        color: $color-primary;
+        // CSS Grid
+        grid-column: 2 / 3;
+        grid-row: 11 / 12;
+        @include jacont;
+    }
+    // Current Temperature | Temperature Maximum / Minimum
+    &__current-temp {
+        font-size: 1.8rem;
+        font-weight: 300;
+        color: $color-primary;
+        // CSS Grid
+        grid-column: 2 / 3;
+        grid-row: 12 / 13;
+        @include jacont;
+    }
+    &__temp-heading {
+        font-size: 1.7rem;
+        font-weight: 500;
+        color: $color-primary;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+    &__temp-max,
+    &__temp-min {
+        font-weight: 400;
+        font-size: 1.7rem;
         color: $color-primary;
     }
-    // Wrappers - Same Rules
-    &__day-night-wrapper,
-    &__temp-wrapper,
-    &__report-wrapper {
-        box-shadow: 0 1rem 1rem .1rem rgba($color-black, .10);
-        display: block;
-        width: 40rem;
-        height: 30rem;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        text-align: center;
+    &__temp-max-icon,
+    &__temp-min-icon {
+        padding: .5rem;
     }
-    // Headings - Same Rules
-    &__day-night-heading,
-    &__temp-heading,
-    &__report {
+}
+
+// * ---------------- * \\
+//  - DAY/NIGHT STATUS -
+// * ---------------- * \\
+.day-night-wrapper {
+    text-align: center;
+    background-color: $color-white;
+    box-shadow: 0 1rem 1rem .1rem rgba($color-black, .10);
+    width: 80%;
+    height: 110%;
+    padding-top: 1rem;
+    position: relative;
+    transition: all .2s;
+    // CSS Grid
+    grid-column: 1 / 2;
+    grid-row: 11 / 15;
+    @include jacont;
+    // Hover Transition
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &__dn-heading {
+        font-size: 1.6rem;
+        font-weight: 500;
         color: $color-primary;
+        padding-bottom: 1rem;
     }
-    // -- Day-Night Status Wrapper --
-    &__day-night-wrapper {
-        top: 65%;
-        left: 20%;
-    }
-    // Day-Night Status heading
-    &__day-night-heading {
-        font-size: 2.4rem;
-    }
-    // Status for day
     &__day,
     &__night {
+        font-weight: 400;
+        font-size: 1.2rem;
         color: $color-primary;
     }
     &__day {
-        font-size: 1.6rem;
         @include center-vh;
-        top: 40%;
+        top: 45%;
     }
-    // Status for night
     &__night {
-        font-size: 1.6rem;
         @include center-vh;
-        top: 60%;
+        top: 75%;
     }
-    // -- Temperature Wrapper --
-    &__temp-wrapper {
-        top: 65%;
-        left: 50%;
+}
+
+// * ---------------- * \\
+//   - DAILY REPORT -
+// * ---------------- * \\
+.report-wrapper {
+    text-align: center;
+    background-color: $color-white;
+    box-shadow: 0 1rem 1rem .1rem rgba($color-black, .10);
+    width: 80%;
+    height: 110%;
+    padding-top: 2rem;
+    position: relative;
+    transition: all .2s;
+    // CSS Grid
+    grid-column: 3 / 4;
+    grid-row: 11 / 15;
+    @include jacont;
+    // Hover Transition
+    &:hover {
+        transform: scale(1.1);
     }
-    // Temperature Heading
-    &__temp-heading {
-        font-size: 2.2rem;
-    }
-    // Maximum Temperature
-    &__temp-max {
-        font-size: 2rem;
-        @include center-vh;
-        top: 40%;
-    }
-    &__temp-max-icon {
-        color: $color-primary;
-    }
-    // Minimum Temperature
-    &__temp-min {
-        font-size: 2rem;
-        @include center-vh;
-        top: 60%;
-    }
-    &__temp-min-icon {
-        color: $color-primary;
-    }
-    // -- Report Wrapper --
-    &__report-wrapper {
-        top: 65%;
-        left: 80%;
-    }
-    // Report Headline
+
     &__report {
         font-size: 2rem;
+        font-weight: 500;
+        color: $color-primary;
+        padding-bottom: 1rem;
     }
-    // Short Status Text
     &__short-text {
-        font-size: 1.4rem;
-        @include center-vh;
+        font-size: 1.3rem;
+        font-weight: 300;
+        color: $color-primary;
     }
-    // Severity of the weather
     &__severity {
-        @include center-vh;
-        top: 80%;
-        color: $color-black;
         font-size: 1.2rem;
+        font-weight: 400;
+        color: $color-primary;
+        padding-top: 2rem;
     }
 }
