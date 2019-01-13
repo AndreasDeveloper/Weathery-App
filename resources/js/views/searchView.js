@@ -2,8 +2,11 @@
 import { elements } from './base';
 
 // -- EXPORTING FUNCTION | Gets the value of search filed input
-export const getInput = () => elements.searchInput.value;
-
+export const getInput = () => {
+    // Setting Item inside of a getInput function | localStorage
+    localStorage.setItem('input', elements.searchInput.value);
+    return elements.searchInput.value;
+}
 // -- EXPORTING FUNCTION | Clearing input from the search bar
 export const clearInput = () => {
     elements.searchInput.value = '';
@@ -14,6 +17,13 @@ export const clearResults = () => {
     elements.searchResultList.innerHTML = '';
 };
 
+// -- EXPORTING FUNCTION | localStorage getting items (readData)
+export const readStorage = () => {
+    const storage = localStorage.getItem('input'); // If its empty, returns null
+    // Restoring from local storage
+    return elements.searchInput.value = storage;
+};
+
 // -- PRIVATE FUNCTION | Checking if there is a postal code
 const postalCodeShow = (postalCode) => {
     if (!postalCode || 0 === postalCode.length) {
@@ -22,6 +32,7 @@ const postalCodeShow = (postalCode) => {
         return postalCode;
     }
 }
+
 // -- EXPORTING FUNCTION | Rendering UI - Cities
 export const renderCities = city => {
     const markup = `

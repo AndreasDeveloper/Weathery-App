@@ -13,7 +13,6 @@ export default class Search {
         try {
             this.cities = res.data; // Full city DATA
             this.cityName = this.cities[0].LocalizedName; // Name of the city
-            console.log(this.cities);
         } catch (error) {
             console.log(error);
         }

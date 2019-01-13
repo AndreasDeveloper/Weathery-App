@@ -46,6 +46,16 @@ elements.searchResultList.addEventListener('click', () => {
     searchView.clearResults();
 });
 
+// -- EVENT LISTENER | Restoring search input data from localStorage
+window.addEventListener('load', () => {
+    const id = window.location.hash.replace('#', ''); 
+    if (id) {
+        searchView.readStorage();
+    } else {
+        return null;
+    }
+});
+
 // --------------------------------------------
 //  FORECAST DATA | ARCHITECTURE | CONTROLLER
 // --------------------------------------------

@@ -27,7 +27,7 @@ const displayIcon = (currCategory) => {
         return `<i class="icon ion-ios-rainy"></i>`;
     } else if (currCategory === 'Wind' || currCategory === 'wind') {
         return `<i class="icon ion-ios-leaf"></i>`;
-    } else if (currCategory === 'Snow' || currCategory === 'snow') {
+    } else if (currCategory === 'Snow' || currCategory === 'snow' || currCategory === 'snow/ice') {
         return `<i class="icon ion-ios-snow"></i>`;
     } else if (currCategory === 'Heat' || currCategory === 'heat') {
         return `<i class="icon ion-ios-sunny"></i>`;
