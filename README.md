@@ -4,11 +4,11 @@
 
 <b>SUMMARY</b>
 
--Weathery is web application that provides weather data of a certain location to its users. AccuWeather API provides weather data of cities, regions, countries to Weathery app. API covers whole world, which means every single location is available, with precise weather data.
+-- Weathery is web application that provides weather data of a certain location to its users. AccuWeather API provides weather data of cities, regions, countries to Weathery app. API covers whole world, which means every single location is available, with precise weather data.
 
 <b>FOCUS</b>
 
--Focus was on API manipulation and consumption of its data. In Weathery app, two endpoints were used (one for search functionality, other for displaying Forecast data of certain location). MVC pattern was used, which makes app much more flexible, code readable and files are much more organised.  
+-- Focus was on API manipulation and consumption of its data. In Weathery app, two endpoints were used (one for search functionality, other for displaying Forecast data of certain location). MVC pattern was used, which makes app much more flexible, code readable and files are much more organised.  
 
 <b>TOOLS USED</b>
 
