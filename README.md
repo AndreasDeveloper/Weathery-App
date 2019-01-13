@@ -12,7 +12,8 @@
 
 <b>TOOLS USED</b>
 
-- Tools Used for this project: HTML5, CSS3 (Minor flexbox) + SASS, JavaScript, JSON (For scripts and NPM packages management).
+- Tools Used for this project: HTML5, CSS3 (CSS Grid + Minor flexbox) + SASS, JavaScript, JSON (For scripts and NPM packages management).
+- Webpack (HTML,SCSS,IMG Plugins/Loaders + Babel)
 - MVC Design Pattern
 - BEM Methodology
 
