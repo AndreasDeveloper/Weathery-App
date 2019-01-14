@@ -40,15 +40,24 @@ const displayIcon = (currCategory) => {
     }
 };
 
+// -- PRIVATE FUNCTION | - Current Temperature format
+const currentTempFormat = (currTemp) => {
+    if (currTemp === undefined || currTemp === null || currTemp === '') {
+        return 'N/A';
+    } else {
+        return currTemp;
+    }
+};
+
 // -- EXPORTING FUNCTION | - Rendering Forecast Data on HTML
 export const renderForecastData = (city) => {
     const markup = `
     <h2 class="forecast-data__date">Showing Forecast For : ${formatTime(city.date)}</h2>
-    <h2 class="forecast-data__location">- ${elements.searchInput.value} -</h2>
+    <h2 class="forecast-data__location">- ${capitalizeFirstLetter(elements.searchInput.value)} -</h2>
     <div class="current-wrapper">
         <h2 class="current-wrapper__weather-icon">${displayIcon(city.category)}</h2>
         <h2 class="current-wrapper__weather">Current Weather Status: ${capitalizeFirstLetter(city.category)}</h2>
-        <h2 class="current-wrapper__current-temp">Current Temperature: ${city.currTempV} ${city.currTempU}&#176;</h2>
+        <h2 class="current-wrapper__current-temp">Current Temperature: ${currentTempFormat(city.currTempV)} ${city.currTempU}&#176;</h2>
         <h3 class="current-wrapper__temp-heading">Expected Temperature For Today</h3>
         <h3 class="current-wrapper__temp-max"><i class="icon ion-md-arrow-dropup current-wrapper__temp-max-icon"></i>Maximum: ${city.tempMaxV} ${city.tempMaxU}&#176;</h3>
         <h3 class="current-wrapper__temp-min"><i class="icon ion-md-arrow-dropdown current-wrapper__temp-min-icon"></i>Minimum: ${city.tempMinV} ${city.tempMinU}&#176;</h3>
