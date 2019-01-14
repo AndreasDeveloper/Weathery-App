@@ -5,12 +5,23 @@
 .header {
     height: 90vh;
 
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-medium-2) {
+        height: 75vh;
+    }
+
     &__heading {
         @include center-vh;
         top: 40%;
         font-size: 2.7rem;
+        font-weight: 500;
         letter-spacing: .2rem;
         color: $color-white;
+
+        // --- MEDIA QUERIES --- \\
+        @media only screen and (max-width: $bp-medium-2) {
+            top: 35%;
+        }
     }
     // -- SEARCH CONTAINER -- \\
     &__search {
@@ -26,7 +37,17 @@
             left: 49%;
 
             // --- MEDIA QUERIES --- \\
-            @media only screen and(max-width: $bp-vsmall-1) {
+            @media only screen and (max-width: $bp-largest-2) {
+                width: 30%;
+            }
+            @media only screen and (max-width: $bp-medium-2) {
+                width: 35%;
+                top: 41%;
+            }
+            @media only screen and (max-width: $bp-medium-1) {
+                width: 37%;
+            }
+            @media only screen and (max-width: $bp-vsmall-1) {
             order: 1;
             flex: 0 0 100%;
             background-color: $color-grey-light-1;
@@ -67,6 +88,11 @@
             max-height: 30rem; // Height of the scroller
             -ms-overflow: auto;
             overflow: auto; // Makes ul to have a scroller
+
+            // --- MEDIA QUERIES --- \\
+            @media only screen and (max-width: $bp-desktop) {
+                max-height: 25rem;
+            }
            & li {
             background: $color-white;
             list-style: none;

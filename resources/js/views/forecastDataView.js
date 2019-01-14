@@ -35,6 +35,8 @@ const displayIcon = (currCategory) => {
         return `<i class="icon ion-ios-thunderstorm"></i>`;
     } else if (currCategory === 'Cold' || currCategory === 'cold') {
         return `<i class="icon ion-ios-thermometer"></i>`;
+    } else if (currCategory === 'Fog' || currCategory === 'fog') {
+        return `<i class="icon ion-ios-cloudy"></i>`;
     } else if (currCategory == undefined || currCategory === '' || currCategory == null) { // If current Category in JSON data is empty string/null/undefined return X
         return `<i class="icon ion-ios-close"></i>`;
     }
@@ -54,23 +56,25 @@ export const renderForecastData = (city) => {
     const markup = `
     <h2 class="forecast-data__date">Showing Forecast For : ${formatTime(city.date)}</h2>
     <h2 class="forecast-data__location">- ${capitalizeFirstLetter(elements.searchInput.value)} -</h2>
-    <div class="current-wrapper">
-        <h2 class="current-wrapper__weather-icon">${displayIcon(city.category)}</h2>
-        <h2 class="current-wrapper__weather">Current Weather Status: ${capitalizeFirstLetter(city.category)}</h2>
-        <h2 class="current-wrapper__current-temp">Current Temperature: ${currentTempFormat(city.currTempV)} ${city.currTempU}&#176;</h2>
-        <h3 class="current-wrapper__temp-heading">Expected Temperature For Today</h3>
-        <h3 class="current-wrapper__temp-max"><i class="icon ion-md-arrow-dropup current-wrapper__temp-max-icon"></i>Maximum: ${city.tempMaxV} ${city.tempMaxU}&#176;</h3>
-        <h3 class="current-wrapper__temp-min"><i class="icon ion-md-arrow-dropdown current-wrapper__temp-min-icon"></i>Minimum: ${city.tempMinV} ${city.tempMinU}&#176;</h3>
-    </div>
-    <div class="day-night-wrapper">
-        <h3 class="day-night-wrapper__dn-heading">Expected Weather For Today</h3>
-        <p class="day-night-wrapper__day">Expected for Today: ${city.dayIp}</p>
-        <p class="day-night-wrapper__night">Expected for Tonight: ${city.nightIp}</p>
-    </div>
-    <div class="report-wrapper">
-        <h3 class="report-wrapper__report">${formatTime(city.date)} - Report</h3>
-        <p class="report-wrapper__short-text">${city.shortText}.</p>
-        <p class="report-wrapper__severity">Severity: ${city.severity}</p>
+    <div class="container-block">
+        <div class="current-wrapper grid-row">
+            <h2 class="current-wrapper__weather-icon">${displayIcon(city.category)}</h2>
+            <h2 class="current-wrapper__weather">Current Weather Status: ${capitalizeFirstLetter(city.category)}</h2>
+            <h2 class="current-wrapper__current-temp">Current Temperature: ${currentTempFormat(city.currTempV)} ${city.currTempU}&#176;</h2>
+            <h3 class="current-wrapper__temp-heading">Expected Temperature For Today</h3>
+            <h3 class="current-wrapper__temp-max"><i class="icon ion-md-arrow-dropup current-wrapper__temp-max-icon"></i>Maximum: ${city.tempMaxV} ${city.tempMaxU}&#176;</h3>
+            <h3 class="current-wrapper__temp-min"><i class="icon ion-md-arrow-dropdown current-wrapper__temp-min-icon"></i>Minimum: ${city.tempMinV} ${city.tempMinU}&#176;</h3>
+        </div>
+        <div class="day-night-wrapper grid-row">
+            <h3 class="day-night-wrapper__dn-heading">Expected Weather For Today</h3>
+            <p class="day-night-wrapper__day">Expected for Today: ${city.dayIp}</p>
+            <p class="day-night-wrapper__night">Expected for Tonight: ${city.nightIp}</p>
+        </div>
+        <div class="report-wrapper grid-row">
+            <h3 class="report-wrapper__report">${formatTime(city.date)} - Report</h3>
+            <p class="report-wrapper__short-text">${city.shortText}.</p>
+            <p class="report-wrapper__severity">Severity: ${city.severity}</p>
+        </div>
     </div>
     `;
     elements.forecastDataDiv.insertAdjacentHTML('afterbegin', markup);

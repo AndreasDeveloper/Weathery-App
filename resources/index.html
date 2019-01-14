@@ -56,29 +56,28 @@
     <section class="weather-data-page">
         <div class="forecast-data">
             <!--
-             INTRODUCTION | LOCATION & DATE AND TIME -
-            <h2 class="forecast-data__date">Showing Forecast for $DATE$</h2>
-            <h2 class="forecast-data__location">$LOCATION$</h2>
-            <h2 class="forecast-data__weather">Current Weather: $WEATHER$</h2>
-            <h2 class="forecast-data__current-temp">Current Temperature: $CURRENT TEMPERATURE$</h2>
-            -- STATUS FOR DAY/NIGHT --
-            <div class="forecast-data__day-night-wrapper">
-                <h3 class="forecast-data__day-night-heading">Expected Weather For Today</h3>
-                <p class="forecast-data__day">Expected for today: $STATUS FOR DAY$</p>
-                <p class="forecast-data__night">Expected for tonight: $STATUS FOR NIGHT$</p>
+        <div class="container-block">
+        <h2 class="forecast-data__date">Showing Forecast For : $DATE</h2>
+        <h2 class="forecast-data__location">- $VALUE -</h2>
+            <div class="current-wrapper grid-row">
+                <h2 class="current-wrapper__weather-icon">$WEATHER ICON</h2>
+                <h2 class="current-wrapper__weather">Current Weather Status: $WEATHER</h2>
+                <h2 class="current-wrapper__current-temp">Current Temperature: $CURRENT TEMPERATURE</h2>
+                <h3 class="current-wrapper__temp-heading">Expected Temperature For Today</h3>
+                <h3 class="current-wrapper__temp-max"><i class="icon ion-md-arrow-dropup current-wrapper__temp-max-icon"></i>Maximum: $MAX TEMPERATURE</h3>
+                <h3 class="current-wrapper__temp-min"><i class="icon ion-md-arrow-dropdown current-wrapper__temp-min-icon"></i>Minimum: $MIN TEMPERATURE</h3>
             </div>
-            -- TEMPERATURE --
-            <div class="forecast-data__temp-wrapper">
-                <h3 class="forecast-data__temp-heading">Expected Temperature For Today</h3>
-                <p class="forecast-data__temp-max">Maximum: $MAXIMUM TEMP$ $UNIT$</p>
-                <p class="forecast-data__temp-min">Minimum: $MINIMUM TEMP$ $UNIT$</p>
+            <div class="day-night-wrapper grid-row">
+                <h3 class="day-night-wrapper__dn-heading">Expected Weather For Today</h3>
+                <p class="day-night-wrapper__day">Expected for Today: $WEATHER TODAY</p>
+                <p class="day-night-wrapper__night">Expected for Tonight: $WEATHER TONIGHT</p>
             </div>
-            -- REPORT FOR CURRENT DATE --
-            <div class="forecast-data__report-wrapper">
-                <h3 class="forecast-data__report">$DATE$ - Report</h3>
-                <p class="forecast-data__short-text">$TEXT$</p>
-                <p class="forecast-data__severity">$SEVERITY$</p>
+            <div class="report-wrapper grid-row">
+                <h3 class="report-wrapper__report">$DATE - Report</h3>
+                <p class="report-wrapper__short-text">$TEXT.</p>
+                <p class="report-wrapper__severity">Severity: $SEVERITY</p>
             </div>
+        </div>
         -->
         </div>
     </section>
