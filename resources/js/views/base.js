@@ -6,7 +6,8 @@ export const elements = {
     searchResultFullList: document.querySelector('.header__search__suggestions__list'), // li
     searchResultLink: document.querySelector('.header__search__suggestions__link'), // anchor tag
     forecastData: document.querySelector('.weather-data-page'), // section
-    forecastDataDiv: document.querySelector('.forecast-data') // div
+    forecastDataDiv: document.querySelector('.forecast-data'), // div
+    dailyForecastDataDiv: document.querySelector('.daily-forecast-data') // div
 };
 
 // -- EXPORTING FUNCTION | Holds loader

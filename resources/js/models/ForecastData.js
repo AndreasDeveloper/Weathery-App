@@ -10,7 +10,6 @@ export default class ForecastData {
     async getForecastData() {
         try {
             const res = await axios(`http://dataservice.accuweather.com/forecasts/v1/daily/1day/${this.id}?apikey=${apiKey}&metric=true`);
-            console.log(res);
             this.data = res.data.DailyForecasts;
             this.headData = res.data.Headline;
             this.date = this.data[0].Date;
@@ -23,7 +22,7 @@ export default class ForecastData {
             this.category = this.headData.Category; // Rain, Snow, Clouds..
             this.severity = this.headData.Severity; // Severity of the category (integers)
             this.shortText = this.headData.Text; // Short text describing the weather
-            
+
             // - Current Conditions - \\
             const res2 = await axios(`http://dataservice.accuweather.com/currentconditions/v1/${this.id}?apikey=${apiKey}`);
             this.data2 = res2.data[0];

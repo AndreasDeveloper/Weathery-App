@@ -4,8 +4,10 @@ import '../sass/main.scss';
 import Search from './models/Search';
 import * as searchView from './views/searchView';
 import * as forecastView from './views/forecastDataView';
+import * as dailyForecastView from './views/dailyForecastView';
 import { elements, renderLoader, clearLoader } from './views/base';
 import ForecastData from './models/ForecastData';
+import DailyForecast from './models/DailyForecast';
 
 // GLOBAL STATE OF THE APP
 const state = {}; // Global state object
@@ -82,5 +84,33 @@ const controlForecastData = async () => {
             console.log(error);
         }
     }
-}
+};
+// Hashchange and calling ForecastData controller
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlForecastData));
+
+// -------------------------------------------------
+//  FORECAST DAILY DATA | ARCHITECTURE | CONTROLLER
+// -------------------------------------------------
+const controlDailyForecastData = async () => {
+    // Get KEY/ID of location from URL
+    const id = window.location.hash.replace('#', ''); 
+    
+    if (id) {
+        // Prepare UI
+
+        // Create new forecast daily data object
+        state.dailyForecast = new DailyForecast(id);
+
+        try {
+            // Get Daily Forecast Data
+            await state.dailyForecast.getDailyForecastData();
+
+            // Render Daily Forecast Data
+            dailyForecastView.renderDailyForecastData(state.dailyForecast);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+};
+// Hashchange and calling DailyForecastData controller
+['hashchange', 'load'].forEach(event => window.addEventListener(event, controlDailyForecastData));

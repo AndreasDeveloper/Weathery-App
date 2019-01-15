@@ -3,7 +3,13 @@ import { elements } from './base';
 
 // -- EXPORTING FUNCTION | - Clearing Forecast Data HTML 
 export const clearForecastData = () => {
-    elements.forecastDataDiv.innerHTML = '';
+    elements.forecastData.innerHTML = '';
+};
+
+// -- EXPORTING FUNCTION | - Formating date and time
+export const formatTime = (currTime) => {
+    return currTime.slice(0, 10).replace(/-/g, '.')
+    .replace(/$/, '.'); // Adds dot at the end of digit
 };
 
 // -- PRIVATE FUNCTION | - Capitalizing first letter 
@@ -13,12 +19,6 @@ const capitalizeFirstLetter = (string) => {
     } else {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-};
-
-// -- PRIVATE FUNCTION | - Formating date and time
-const formatTime = (currTime) => {
-    return currTime.slice(0, 10).replace(/-/g, '.')
-    .replace(/$/, '.'); // Adds dot at the end of digit
 };
 
 // -- PRIVATE FUNCTION | - Displaying icon related to current weather
@@ -56,8 +56,7 @@ export const renderForecastData = (city) => {
     const markup = `
     <h2 class="forecast-data__date">Showing Forecast For : ${formatTime(city.date)}</h2>
     <h2 class="forecast-data__location">- ${capitalizeFirstLetter(elements.searchInput.value)} -</h2>
-    <div class="container-block">
-        <div class="current-wrapper grid-row">
+        <div class="current-wrapper">
             <h2 class="current-wrapper__weather-icon">${displayIcon(city.category)}</h2>
             <h2 class="current-wrapper__weather">Current Weather Status: ${capitalizeFirstLetter(city.category)}</h2>
             <h2 class="current-wrapper__current-temp">Current Temperature: ${currentTempFormat(city.currTempV)} ${city.currTempU}&#176;</h2>
@@ -65,17 +64,17 @@ export const renderForecastData = (city) => {
             <h3 class="current-wrapper__temp-max"><i class="icon ion-md-arrow-dropup current-wrapper__temp-max-icon"></i>Maximum: ${city.tempMaxV} ${city.tempMaxU}&#176;</h3>
             <h3 class="current-wrapper__temp-min"><i class="icon ion-md-arrow-dropdown current-wrapper__temp-min-icon"></i>Minimum: ${city.tempMinV} ${city.tempMinU}&#176;</h3>
         </div>
-        <div class="day-night-wrapper grid-row">
+        <div class="day-night-wrapper">
             <h3 class="day-night-wrapper__dn-heading">Expected Weather For Today</h3>
             <p class="day-night-wrapper__day">Expected for Today: ${city.dayIp}</p>
             <p class="day-night-wrapper__night">Expected for Tonight: ${city.nightIp}</p>
         </div>
-        <div class="report-wrapper grid-row">
+        <div class="report-wrapper">
             <h3 class="report-wrapper__report">${formatTime(city.date)} - Report</h3>
             <p class="report-wrapper__short-text">${city.shortText}.</p>
             <p class="report-wrapper__severity">Severity: ${city.severity}</p>
         </div>
-    </div>
+        
     `;
-    elements.forecastDataDiv.insertAdjacentHTML('afterbegin', markup);
+    elements.forecastData.insertAdjacentHTML('afterbegin', markup);
 }; 
