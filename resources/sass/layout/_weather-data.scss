@@ -15,16 +15,22 @@
     @media only screen and (max-width: $bp-desktop-2) {
         height: 100vh;
     }
-    @media only screen and (max-width: $bp-medium-2) {
+    @media only screen and (max-width: $bp-largest-5) {
         height: 85vh;
     }
+    @media only screen and (max-width: $bp-medium-1) {
+        height: 70vh;
+    }
     @media only screen and (max-width: $bp-medium) {
-        height: 80vh;
+        height: 65vh;
+    }
+    @media only screen and (max-width: $bp-small-lg) {
+        height: 55vh;
     }
 
     // CSS Grid
     display: grid;
-    grid-template-columns: repeat(auto-fit, 7.5vh);
+    grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
     grid-template-rows: repeat(30, 2.1vw);
 
     // --- MEDIA QUERIES | For CSS Grid --- \\
@@ -65,6 +71,10 @@
         }
         @media only screen and (max-width: $bp-small-lg) {
             font-size: 1.5rem;
+            padding-bottom: 2rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+           font-size: 1.3rem; 
         }
     }
     // Location
@@ -76,6 +86,14 @@
         grid-column: 10 / 18;
         grid-row: 3 / 5;
         @include jacont;
+
+        // --- MEDIA QUERIES --- \\
+        @media only screen and (max-width: $bp-small-md) {
+            padding-bottom: 1rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+            font-size: 2rem;
+        }
     }
 }
 
@@ -100,8 +118,11 @@
         transform: scale(1.1);
     }
     // --- MEDIA QUERIES --- \\
-    @media only screen and (max-width: $bp-desktop) {
-        height: 120%;
+    @media only screen and (max-width: $bp-desktop-3) {
+        height: 125%;
+    }
+    @media only screen and (max-width: $bp-largest-5) {
+        height: 135%;
     }
     
     &__weather-icon { // Current Weather Icon
@@ -113,8 +134,11 @@
         @include jacont;
 
         // --- MEDIA QUERIES --- \\
-        @media only screen and (max-width: $bp-small-lg) {
-            font-size: 4rem;
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 3rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+            font-size: 2.5rem;
         }
     }
     &__weather { // Current Weather Status
@@ -136,6 +160,9 @@
         @media only screen and (max-width: $bp-small-lg) {
             font-size: 1.2rem;
         }
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1rem;
+        }
     }
     // Current Temperature | Temperature Maximum / Minimum
     &__current-temp {
@@ -154,8 +181,11 @@
         @media only screen and (max-width: $bp-large) {
             font-size: 1.4rem;
         }
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1rem;
+        }
     }
-    &__temp-heading {
+    &__temp-heading { // Expected Weather 
         font-size: 1.7rem;
         font-weight: 500;
         color: $color-primary;
@@ -172,6 +202,9 @@
         @media only screen and (max-width: $bp-small-lg) {
             font-size: 1.2rem;
         }
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1rem;
+        }
     }
     &__temp-max,
     &__temp-min {
@@ -185,6 +218,9 @@
         }
         @media only screen and (max-width: $bp-large) {
             font-size: 1.3rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1rem;
         }
     }
     &__temp-max-icon,
@@ -214,20 +250,33 @@
         transform: scale(1.1);
     }
     // --- MEDIA QUERIES --- \\
-    @media only screen and (max-width: $bp-desktop) {
+    @media only screen and (max-width: $bp-desktop-3) {
         height: 120%;
     }
+    @media only screen and (max-width: $bp-small) {
+        height: 130%;
+        width: 90%;
+    }
 
-    &__dn-heading {
+    &__dn-heading { // Day / Night Heading
         font-size: 1.6rem;
         font-weight: 500;
         color: $color-primary;
         padding-bottom: 1rem;
 
         // --- MEDIA QUERIES --- \\
-        @media only screen and (max-width: $bp-desktop) {
+        @media only screen and (max-width: $bp-desktop-3) {
             padding-top: .5rem;
             font-size: 1.4rem;
+        }
+        @media only screen and (max-width: $bp-largest-5) {
+            font-size: 1.2rem;
+        }
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 1rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+            font-size: .9rem;
         }
     }
     &__day,
@@ -239,6 +288,15 @@
         // --- MEDIA QUERIES --- \\
         @media only screen and (max-width: $bp-desktop) {
             font-size: 1.1rem;
+        }
+        @media only screen and (max-width: $bp-largest-5) {
+            font-size: .9rem;
+        }
+        @media only screen and (max-width: $bp-small-lg) {
+            font-size: .7rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+            font-size: .3rem;
         }
     }
     &__day {
@@ -272,8 +330,12 @@
         transform: scale(1.1);
     }
     // --- MEDIA QUERIES --- \\
-    @media only screen and (max-width: $bp-desktop) {
-        height: 120%;
+    @media only screen and (max-width: $bp-desktop-3) {
+        height: 140%;
+    }
+    @media only screen and (max-width: $bp-small) {
+        height: 150%;
+        width: 90%;
     }
 
     &__report {
@@ -286,6 +348,12 @@
         @media only screen and (max-width: $bp-desktop) {
             font-size: 1.6rem;
         }
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 1.2rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1rem;
+        }
     }
     &__short-text {
         font-size: 1.3rem;
@@ -297,12 +365,31 @@
         @media only screen and (max-width: $bp-largest-4) {
             font-size: 1.25rem;
         }
+        @media only screen and (max-width: $bp-largest-5) {
+            font-size: 1rem;
+        }
+        @media only screen and (max-width: $bp-small-lg) {
+            font-size: .8rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+            font-size: .6rem;
+        }
     }
     &__severity {
         font-size: 1.2rem;
         font-weight: 400;
         color: $color-primary;
         padding-top: 2rem;
+
+        // --- MEDIA QUERIES --- \\
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 1rem;
+            padding-top: 1rem;
+        }
+        @media only screen and (max-width: $bp-small) {
+            font-size: .7rem;
+            padding-top: .6rem;
+        }
     }
 }
 
@@ -320,6 +407,11 @@
     grid-column: 1 / 27;
     grid-row: 19 / 20;
     @include jacont;
+
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-small) {
+        font-size: 1.9rem;       
+    }
 }
 
 .block-1,
@@ -338,8 +430,11 @@
         transform: scale(1.1);
     }
     // --- MEDIA QUERIES --- \\
-    @media only screen and (max-width: $bp-desktop) {
+    @media only screen and (max-width: $bp-desktop-3) {
         grid-row: 22 / 28;
+    }
+    @media only screen and (max-width: $bp-small) {
+        grid-row: 22 / 30; 
     }
 }
 
@@ -379,10 +474,26 @@
     // Date
     &__date {
         font-weight: 400;
+
+        // --- MEDIA QUERIES --- \\
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 1.5rem;
+        }
+        @media only screen and (max-width: $bp-small-lg) {
+            font-size: 1.3rem;
+        }
     }
     // Temperature Heading
     &__temp {
         font-weight: 500;
+
+        // --- MEDIA QUERIES --- \\
+        @media only screen and (max-width: $bp-largest-5) {
+            font-size: 1.25rem;
+        }
+        @media only screen and (max-width: $bp-small-lg) {
+            font-size: 1rem;
+        }
     }
     // Maximum and minimum temperature values and units
     &__t-max,
@@ -398,6 +509,17 @@
     &__day,
     &__night {
         font-weight: 400;
+
+        // --- MEDIA QUERIES --- \\
+        @media only screen and (max-width: $bp-largest-5) {
+            font-size: 1.2rem;
+        }
+        @media only screen and (max-width: $bp-medium) {
+            font-size: 1rem;
+        }
+        @media only screen and (max-width: $bp-small-lg) {
+            font-size: .8rem;
+        }
     }
     // Status for day
     &__day {

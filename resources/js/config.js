@@ -8,4 +8,4 @@
 */
 
 // * -- API KEY | NOT SAFE -- * \\
-export const apiKey = 'krrz9cdAfGkRTdO0q3fe6pytZdTmIJMY';
+export const apiKey = 'TfdcI3rOONj6r0NqMZAkURXPQQU4ufGZ';
