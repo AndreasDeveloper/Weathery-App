@@ -96,8 +96,6 @@ const controlDailyForecastData = async () => {
     const id = window.location.hash.replace('#', ''); 
     
     if (id) {
-        // Prepare UI
-
         // Create new forecast daily data object
         state.dailyForecast = new DailyForecast(id);
 

@@ -24,10 +24,10 @@
 
     // CSS Grid
     display: grid;
-    grid-template-columns: repeat(30, 7.5vh);
+    grid-template-columns: repeat(auto-fit, 7.5vh);
     grid-template-rows: repeat(30, 2.1vw);
 
-    // --- MEDIA QUERIES --- \\
+    // --- MEDIA QUERIES | For CSS Grid --- \\
     @media only screen and (max-width: $bp-vsmall-3) {
         margin: 0;
     }
@@ -98,6 +98,10 @@
     // Hover Transition
     &:hover {
         transform: scale(1.1);
+    }
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-desktop) {
+        height: 120%;
     }
     
     &__weather-icon { // Current Weather Icon
@@ -209,6 +213,10 @@
     &:hover {
         transform: scale(1.1);
     }
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-desktop) {
+        height: 120%;
+    }
 
     &__dn-heading {
         font-size: 1.6rem;
@@ -217,7 +225,8 @@
         padding-bottom: 1rem;
 
         // --- MEDIA QUERIES --- \\
-        @media only screen and (max-width: $bp-small-lg) {
+        @media only screen and (max-width: $bp-desktop) {
+            padding-top: .5rem;
             font-size: 1.4rem;
         }
     }
@@ -228,8 +237,8 @@
         color: $color-primary;
 
         // --- MEDIA QUERIES --- \\
-        @media only screen and (max-width: $bp-small-lg) {
-            font-size: 1.2rem;
+        @media only screen and (max-width: $bp-desktop) {
+            font-size: 1.1rem;
         }
     }
     &__day {
@@ -262,12 +271,21 @@
     &:hover {
         transform: scale(1.1);
     }
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-desktop) {
+        height: 120%;
+    }
 
     &__report {
         font-size: 2rem;
         font-weight: 500;
         color: $color-primary;
         padding-bottom: 1rem;
+
+        // --- MEDIA QUERIES --- \\
+        @media only screen and (max-width: $bp-desktop) {
+            font-size: 1.6rem;
+        }
     }
     &__short-text {
         font-size: 1.3rem;
@@ -299,7 +317,7 @@
     text-transform: uppercase;
     color: $color-primary;
     // CSS Grid
-    grid-column: 11 / 17;
+    grid-column: 1 / 27;
     grid-row: 19 / 20;
     @include jacont;
 }
@@ -315,10 +333,13 @@
     padding-top: 1rem;
     transition: all .2s;
     grid-row: 22 / 27;
-
     // Hover Transition
     &:hover {
         transform: scale(1.1);
+    }
+    // --- MEDIA QUERIES --- \\
+    @media only screen and (max-width: $bp-desktop) {
+        grid-row: 22 / 28;
     }
 }
 
