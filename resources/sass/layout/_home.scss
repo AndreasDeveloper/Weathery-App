@@ -5,10 +5,7 @@
 .header {
     height: 90vh;
     // --- MEDIA QUERIES --- \\
-    @media only screen and (max-width: $bp-medium-2) {
-        height: 75vh;
-    }
-
+    @media only screen and (max-width: $bp-medium-2) { height: 75vh; }
     &__heading {
         @include center-vh;
         top: 40%;
@@ -16,39 +13,25 @@
         font-weight: 500;
         letter-spacing: .2rem;
         color: $color-white;
-
         // --- MEDIA QUERIES --- \\
-        @media only screen and (max-width: $bp-medium-2) {
-            top: 35%;
-        }
-        @media only screen and (max-width: $bp-small) {
-            font-size: 2rem;
-        }
+        @media only screen and (max-width: $bp-medium-2) { top: 35%; }
+        @media only screen and (max-width: $bp-small) { font-size: 2rem; }
     }
     // -- SEARCH CONTAINER -- \\
     &__search {
             flex: 0 0 40%;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             width: 25%;
             position: absolute;
             @include center-vh;
             left: 49%;
 
             // --- MEDIA QUERIES --- \\
-            @media only screen and (max-width: $bp-largest-2) {
-                width: 30%;
-            }
-            @media only screen and (max-width: $bp-medium-2) {
-                width: 35%;
-                top: 41%;
-            }
-            @media only screen and (max-width: $bp-medium-1) {
-                width: 37%;
-            }
+            @media only screen and (max-width: $bp-largest-2) { width: 30%; }
+            @media only screen and (max-width: $bp-medium-2) { width: 35%; top: 41%; }
+            @media only screen and (max-width: $bp-medium-1) { width: 37%; }
             @media only screen and (max-width: $bp-vsmall-1) {
             order: 1;
             flex: 0 0 100%;
@@ -66,21 +49,14 @@
             width: 90%;
             transition: all .2s;
             margin-right: -3.25rem;
-    
             &:focus {
                 outline: none;
                 width: 100%;        // WHEN ELEMENT IS FOCUSED (CLICKED) IT WILL EXTENED. 
                 background-color: $color-grey-light-2;
             }
-    
-            &::-webkit-input-placeholder {
-                font-weight: 100;
-                color: $color-grey-dark-1;
-            }
+            &::-webkit-input-placeholder { font-weight: 100; color: $color-grey-dark-1; }
         }
-        &__input:focus + &__button {
-            background-color: $color-grey-light-2;
-        }
+        &__input:focus + &__button { background-color: $color-grey-light-2; }
         // -- SEARCH SUGGESTIONS | AUTOCOMPLETE -- \\
         &__suggestions {
             position: absolute;
@@ -90,11 +66,8 @@
             max-height: 30rem; // Height of the scroller
             -ms-overflow: auto;
             overflow: auto; // Makes ul to have a scroller
-
             // --- MEDIA QUERIES --- \\
-            @media only screen and (max-width: $bp-desktop) {
-                max-height: 25rem;
-            }
+            @media only screen and (max-width: $bp-desktop) { max-height: 25rem; }
            & li {
             background: $color-white;
             list-style: none;
@@ -109,14 +82,9 @@
             display: flex;
             justify-content: space-between;
             text-transform: capitalize;
-            &:hover {
-                background: $color-grey-light-5;
-            }
+            &:hover { background: $color-grey-light-5; }
            }
-           &__link {
-               text-decoration: none;
-               color: $color-grey-dark-3;
-           }
+           &__link { text-decoration: none; color: $color-grey-dark-3; }
            &__rank {
                 display: -webkit-box;
                 display: -webkit-flex;
@@ -134,14 +102,8 @@
         &__button {
             border: none;
             background-color: $color-grey-light-1;
-    
-            &:focus {
-                outline: none;
-            }
-    
-            &:active {
-                transform: translateY(.2rem);
-            }
+            &:focus { outline: none; }
+            &:active { transform: translateY(.2rem); }
         }
         // -- SEARCH ICON -- \\
         &__icon {

@@ -4,29 +4,17 @@
 
 // -- MAIN PAGE SETUP --
 .weather-data-page {
-    height: 120vh;
+    min-height: 120vh;
     background-color: $color-grey-light-1;
     position: relative;
 
     // --- MEDIA QUERIES --- \\
-    @media only screen and (max-width: $bp-desktop) {
-        height: 125vh;
-    }
-    @media only screen and (max-width: $bp-desktop-2) {
-        height: 100vh;
-    }
-    @media only screen and (max-width: $bp-largest-5) {
-        height: 85vh;
-    }
-    @media only screen and (max-width: $bp-medium-1) {
-        height: 70vh;
-    }
-    @media only screen and (max-width: $bp-medium) {
-        height: 65vh;
-    }
-    @media only screen and (max-width: $bp-small-lg) {
-        height: 55vh;
-    }
+    @media only screen and (max-width: $bp-desktop) { height: 125vh; }
+    @media only screen and (max-width: $bp-desktop-2) {height: 100vh;}
+    @media only screen and (max-width: $bp-largest-5) {height: 80vh;}
+    @media only screen and (max-width: $bp-medium-1) { height: 70vh; }
+    @media only screen and (max-width: $bp-medium) { height: 65vh; }
+    @media only screen and (max-width: $bp-small-lg) { height: 55vh; }
 
     // CSS Grid
     display: grid;
@@ -520,13 +508,5 @@
         @media only screen and (max-width: $bp-small-lg) {
             font-size: .8rem;
         }
-    }
-    // Status for day
-    &__day {
-
-    }
-    // Status for night
-    &__night {
-
     }
 }
